@@ -1,0 +1,48 @@
+
+
+Appwidget:
+
+<MenuWidget>:
+    canvas.before:
+        Color:
+            rgba: 0, 0, 0, .8
+        Rectangle:
+            size: self.size
+    Label:
+        font_size: dp(70)
+        font_name: "font/digital-7.ttf"
+        text: root.parent.menu_title
+        pos_hint: {"center_x": .5, "center_y": .6}
+    Button:
+        font_size: dp(30)
+        font_name: "font/Eurostile.ttf"
+        text: root.parent.menu_button_title
+        pos_hint: {"center_x": .5, "center_y": .3}
+        size_hint: .2, .15
+        on_press: root.parent.button_click()
+        background_normal: ''
+        background_color: 1, .4, 0, .55
+
+<Appwidget>:
+    canvas.before:
+        Rectangle:
+            size: self.size
+            source: "images/theone.png"
+    menu_widget: menu_widget
+    perspective_x: self.width / 2
+    perspective_y: self.height * 0.75
+
+    MenuWidget:
+        id: menu_widget
+
+    Label:
+        text:root.score
+        font_size: dp(20)
+        font_name: "font/Eurostile.ttf"
+        size_hint: .18, .18
+        pos_hint: {"x": 0, "top": 1}
+
+
+
+
+
